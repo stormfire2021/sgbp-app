@@ -25,9 +25,12 @@ cat!: string;
  * ele recebe a lista do metodo getCategoria()
  */
 livs: Livro[];
+livsConsultar: Livro[];
+
 
   constructor(private listCategoria: ListCategoriasService, private consultar : ConsultarService) {
     this.livs = [];
+    this.livsConsultar = [];
     this.getCategorias();
   }
 
@@ -36,21 +39,29 @@ livs: Livro[];
   }
 
   onSearch(){
-
+    this.livsConsultar = JSON.parse(localStorage.getItem('livros')!);
+    for(let u of this.livsConsultar){
+      if (u.categoria?.valueOf() ==  this.cat.valueOf()){
+        this.livs.push(u);
+      }
+    }
+    /*
     this.consultar.getLivroCategoria(this.cat).subscribe((livs) => this.livs = livs)
     this.cat = '';
-
+    */
   }
 
   getCategorias(): void {
-    /*
+
    if (localStorage.getItem('categorias')) {
      this.categorias = JSON.parse(localStorage.getItem('categorias')!);
    } else {
      this.categorias = [];
    }
-   */
+
+  /*
   this.listCategoria.getAll().subscribe((categorias) => this.categorias = categorias);
+   */
  }
 
  limpar(){

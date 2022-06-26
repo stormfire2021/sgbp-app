@@ -38,28 +38,28 @@ export class LivroComponent implements OnInit {
   //variavel guarda o nome do livro em caso do update do nome
   nomeLivro!: string;
 
-
+/* construtor para uso com localstorage
   constructor( private listCategoria : ListCategoriasService, private listaService : ListLivosService) {
     this.livs = [];
     this.getCategorias();
     this.getLivros();
   }
+ */
 
 
-  /* construtor para uso com localstorage
   constructor() {
     this.livs = [];
     this.getCategorias();
     this.getLivros();
   }
-  */
+
   ngOnInit(): void {
     this.liv = new Livro('', '', '', '', '');
     this.getLivros();
   }
 
   onSubmit() {
-    /*
+
     if (this.update) {
       this.livs = this.livs.filter((l) => {
         return l.livro?.valueOf() != this.nomeLivro?.valueOf();
@@ -77,8 +77,8 @@ export class LivroComponent implements OnInit {
     this.formLivro.reset();
     this.liv = new Livro('', '', '', '', '');
     this.livs = JSON.parse(localStorage.getItem('livros')!);
-     */
 
+    /*
     if(this.update){
       this.listaService.updateLivro(this.liv);
       this.liv = new Livro('', '', '', '', '');
@@ -90,7 +90,7 @@ export class LivroComponent implements OnInit {
       this.formLivro.reset();
     }
     this.listaService.getAll().subscribe((livs) => this.livs = livs);
-
+    */
   }
 
   onUpdate(liv: Livro) {
@@ -105,18 +105,20 @@ export class LivroComponent implements OnInit {
     let confirmacao = window.confirm(
       'Remalmente deseja remover este livro : ' + livro.livro
     );
-    /*
+
     if (!confirmacao) {
       return;
     } else {
       this.livsModify = this.livs.filter((l) => {
-        return l.livro?.valueOf() != this.nomeLivro?.valueOf();
+        return l.livro?.valueOf() != livro.livro?.valueOf();
       });
 
       localStorage.setItem('livros', JSON.stringify(this.livsModify));
       this.livs = JSON.parse(localStorage.getItem('livros')!);
-    } */
+      window.alert('Livro excluido com sucesso!')
+    }
 
+    /*
     if (!confirmacao) {
       return;
     } else {
@@ -125,28 +127,32 @@ export class LivroComponent implements OnInit {
 
     }
     this.listaService.getAll().subscribe((livs) => this.livs = livs);
+    */
   }
 
   getCategorias(): void {
-     /*
+
     if (localStorage.getItem('categorias')) {
       this.categorias = JSON.parse(localStorage.getItem('categorias')!);
     } else {
       this.categorias = [];
     }
-    */
+
+     /*
    this.listCategoria.getAll().subscribe((categorias) => this.categorias = categorias);
+   */
   }
 
   getLivros(): void {
-    /*
+
     if (localStorage.getItem('livros')) {
       this.livs = JSON.parse(localStorage.getItem('livros')!);
     } else {
       this.livs = [];
     }
-    */
 
+    /*
     this.listaService.getAll().subscribe((livs) => this.livs = livs);
+    */
   }
 }

@@ -61,7 +61,7 @@ export class UserComponent implements OnInit {
    * senão faz o submit no metodo onAddStorage que insere os dados no local
    */
   onSubmit(): void {
-    /*
+
     //verifica se é update
     if (this.update) {
       this.users = this.users.filter((u) => {
@@ -83,8 +83,9 @@ export class UserComponent implements OnInit {
     this.userRepassword = '';
 
     this.users = JSON.parse(localStorage.getItem('user')!);
-    */
 
+
+     /*
     if(this.update){
       this.userService.updateUser(this.user);
       this.user = new User('', '', '', '');
@@ -96,6 +97,7 @@ export class UserComponent implements OnInit {
       this.form.reset();
     }
     this.userService.getAll().subscribe((users) => this.users = users);
+     */
   }
 
   onUpdate(user: User) {
@@ -107,7 +109,7 @@ export class UserComponent implements OnInit {
   }
 
   onDelete(user: User): void {
-    /*
+
     let confirmacao = window.confirm(
       'Remalmente deseja remover este usuario : ' + user.username
     );
@@ -121,7 +123,8 @@ export class UserComponent implements OnInit {
       localStorage.setItem('user', JSON.stringify(this.usersModify));
       this.users = JSON.parse(localStorage.getItem('user')!);
     }
-    */
+
+   /*
     let confirmacao = window.confirm(
       'Remalmente deseja remover este livro : ' + user.username
     );
@@ -133,17 +136,20 @@ export class UserComponent implements OnInit {
       this.user = new User('', '', '', '');
     }
     this.userService.getAll().subscribe((users) => this.users = users);
+     */
   }
 
   getAll(): void {
-    /*
+
     if (localStorage.getItem('user')) {
       this.users = JSON.parse(localStorage.getItem('user')!);
     } else {
       this.users = [];
     }
-    */
+     /*
     this.userService.getAll().subscribe((users) => this.users = users);
+    */
+
   }
 
 

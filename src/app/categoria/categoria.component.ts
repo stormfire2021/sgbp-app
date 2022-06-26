@@ -18,12 +18,13 @@ export class CategoriaComponent implements OnInit {
   categoriasModify?: Categoria[];
   nomeCat!: string;
 
-  livs: Livro[];
-  check: number;
+  livs!: Livro[];
+  check!: number;
 
   //variavel q verifica se o metodo é update ou não
   update: boolean = false;
 
+  /*construtor para trabalhar com localstorage
   constructor(private listCategoria: ListCategoriasService,
     private listLivros: ListLivosService) {
 
@@ -31,13 +32,13 @@ export class CategoriaComponent implements OnInit {
     this.categorias = [];
     this.check = 0;
   }
+ */
 
-  /*construtor para trabalhar com localstorage
   constructor() {
     this.categorias = [];
     this.getCategorias();
   }
-   */
+
 
   ngOnInit(): void {
     this.cat = new Categoria('');
@@ -47,7 +48,7 @@ export class CategoriaComponent implements OnInit {
   }
 
   onSubmit(): void {
-    /* atribuições para trabalhar com localStorage
+
     //verifica se é update
     if (this.update) {
       console.log('nomeCategoria '+ this.nomeCat )
@@ -71,7 +72,8 @@ export class CategoriaComponent implements OnInit {
     this.cat = new Categoria('');
 
     this.categorias = JSON.parse(localStorage.getItem('categorias')!);
-    */
+
+   /* atribuições para trabalhar com json-server
     if (this.update) {
       this.listCategoria.updateCategoria(this.cat);
       this.formCategoria.reset();
@@ -83,6 +85,7 @@ export class CategoriaComponent implements OnInit {
     this.listCategoria
       .getAll()
       .subscribe((categorias) => (this.categorias = categorias));
+    */
   }
 
   onUpdate(cat: Categoria) {
@@ -94,7 +97,7 @@ export class CategoriaComponent implements OnInit {
   }
 
   onDelete(cat: Categoria) {
-    /* atribuições para trabalhar com localStorage
+
     let confirmacao = window.confirm(
       'Remalmente deseja remover esta categoria : ' + cat.categoria
     );
@@ -108,12 +111,15 @@ export class CategoriaComponent implements OnInit {
 
       localStorage.setItem('categorias', JSON.stringify(this.categoriasModify));
       this.categorias = JSON.parse(localStorage.getItem('categorias')!);
+      window.alert('Cadastro excluido com sucesso');
     }
-    */
 
+
+     /* atribuições para trabalhar com localStorage
     let confirm = window.confirm(
       'Deseja Realmente remover a categoria' + cat.id
     );
+
 
     if (!confirm) {
       return;
@@ -139,27 +145,36 @@ export class CategoriaComponent implements OnInit {
     this.listCategoria
     .getAll()
     .subscribe((categorias) => (this.categorias = categorias));
+    */
 }
 
   getCategorias(): void {
-    /* atribuições para trabalhar com json-server
+
     if (localStorage.getItem('categorias')) {
       this.categorias = JSON.parse(localStorage.getItem('categorias')!);
     } else {
       this.categorias = [];
     }
-     */
 
+    /* atribuições para trabalhar com json-server
     this.listCategoria
       .getAll()
       .subscribe((categorias) => (this.categorias = categorias));
+      */
   }
 
   getLivros(): void {
+    if (localStorage.getItem('livros')) {
+      this.livs = JSON.parse(localStorage.getItem('livs')!);
+    } else {
+      this.livs = [];
+    }
+    /*
     this.listLivros.getAll().subscribe((livs) => (this.livs = livs));
 
     for (let u of this.livs) {
       console.log(u.livro + 'filtro');
     }
+    */
   }
 }
