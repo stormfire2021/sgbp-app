@@ -1,0 +1,89 @@
+<div class="card-panel brown darken-1 center card-title white-text">
+  Gerenciador de Cagegoria </div>
+<!-- Div principal-->
+<div class="container contact">
+  <form class="col s8" #formCategoria="ngForm" (submit)="onSubmit()">
+    <div class="row">
+      <div class=" input-field col s2"></div>
+    <div class="input-field col s4">
+      <input
+        id="input-categoria"
+        name="input-categoria"
+        type="text"
+        class="validate"
+        [(ngModel)]="this.cat.categoria"
+        #name="ngModel"
+        required/>
+      <label for="input-categoria">Categoria *</label>
+      <div class="red-text" [hidden]="name.valid || name.untouched">
+        Por favor, informe a categoria.
+      </div>
+      <span
+        class="helper-text"
+        data-error="O campo é inválido"
+        data-success="Campo Valido"></span>
+    </div>
+    <div class="input-field col s2">
+      <br>
+       <li> <button
+        class="btn waves-effect waves-light  brown darken-1" type="submit"
+        [disabled]="!formCategoria.valid">Salvar<i class="material-icons right">save</i>
+       </button>
+     </li>
+   </div>
+   <div class="input-field col s2">
+     <br>
+     <li>
+       <button
+         class="btn waves-effect waves-light brown darken-1 " routerLink="/home">
+           Voltar<i class="material-icons right">arrow_back</i>
+       </button>
+     </li>
+    </div>
+   </div>
+
+  </form>
+</div>
+<!-- Fim Div principal-->
+<!-- Div Tabela-->
+<div>
+  <table  class="striped">
+    <tr class=" brown darken-1 white-text   ">
+      <th width="10%" class="tdTable" scope = "col">ID. </th>
+        <th scope = "col" class="tdTable">Categoria       </th>
+        <th scope = "col" width="10%" scope="col" class="tdTable">Editar          </th>
+        <th scope = "col" width="10%" scope="col" class="tdTable">Deletar         </th>
+        <th width="1.5%"></th>
+    </tr>
+  </table>
+</div>
+
+<div class="table-container">
+  <table  class="striped">
+        <tbody>
+          <tr *ngFor = 'let c of categorias'>
+              <td width="10%" class="tdTable">{{c.id}}       </td>
+              <td>{{c.categoria}}</td>
+              <td width="10%" scope="col" class="tdTable">
+                <a width="25px"><i class="material-icons yellow-text" (click)="onUpdate(c)">edit</i></a>
+              </td>
+              <td width="10%" scope="col" class="tdTable">
+                <a width="25px"><i class="material-icons red-text " (click)="onDelete(c)">delete</i></a>
+              </td>
+          </tr>
+        </tbody>
+  </table>
+  <!--verifica se a registro caso contrario exibe esta div-->
+  <div *ngIf="!categorias || categorias!.length == 0">
+    <div class="row">
+      <div class="center-align">
+        <i class="col s12 material-icons large red-text">sentiment_dissatisfied</i>
+        <span class="col s12 flow-text red-text"
+          >Sem categorias cadastradas!</span
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Div Tabela-->
+

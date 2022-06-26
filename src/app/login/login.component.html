@@ -1,0 +1,59 @@
+<div class="bg-img">
+  <div class="content">
+      <header>Login</header>
+      <form class="col s12" #formLogin="ngForm" (submit)="onSubmit()">
+        <!--div do input-email-->
+        <div class="field">
+          <span class="material-icons">email</span>
+            <input id="input-email" name="input-email" type="text" class="validate"
+              [(ngModel)]="this.email" placeholder="Email" #name="ngModel" required/>
+        </div>
+        <!--div verificação do input-email-->
+        <div class="red-text" [hidden]="name.valid || name.untouched">
+           Por favor, informe o email.
+        </div>
+        <!--div validação do input-email-->
+        <div>
+          <span class="helper-text white-text left" data-error="E-mail invalido"
+              data-success="E-mail Valido" >Digite o email</span>
+        </div>
+        <br>
+        <br>
+        <!--div do input-senha-->
+        <div class="field">
+          <span class="material-icons">password</span>
+            <input id="input-senha" name="input-senha" type="password" class="password"
+            class="validate" [(ngModel)]="this.senha" placeholder="Senha" #name="ngModel"
+            required>
+        </div>
+        <!--div verificação do input-senha-->
+        <div class="red-text" [hidden]="name.valid || name.untouched">
+              Por favor, informe a senha.
+        </div>
+        <!--div informação do input-senha-->
+        <div>
+          <span class="helper-text white-text left">Digite a senha</span>
+        </div>
+        <br>
+        <!--div informação do esqueceu senha-->
+        <div class="pass">
+            <a href="#">Esqueceu a senha?</a>
+        </div>
+        <!--div botao-->
+
+          <button class="button1" type="submit"
+             [disabled]="!formLogin.valid">LOGIN<i class="material-icons right">login</i>
+            </button>
+
+
+        <!--div para futuros links-->
+        <div class="link">
+
+        </div>
+        <!--div futuramente cadastro -->
+        <div class="signup">
+
+        </div>
+      </form>
+  </div>
+</div>

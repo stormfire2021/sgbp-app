@@ -1,0 +1,181 @@
+{
+  "categorias": [
+    {
+      "id": 4,
+      "categoria": "História"
+    },
+    {
+      "id": 5,
+      "categoria": "Geografia"
+    },
+    {
+      "id": 6,
+      "categoria": "Ficção Cientifica"
+    },
+    {
+      "id": 7,
+      "categoria": "Manga"
+    },
+    {
+      "id": 8,
+      "categoria": "HQ"
+    },
+    {
+      "id": 9,
+      "categoria": "Religião"
+    },
+    {
+      "id": "27",
+      "categoria": "Aventura"
+    },
+    {
+      "id": "42",
+      "categoria": "Programação"
+    },
+    {
+      "id": "47",
+      "categoria": "Literatura"
+    },
+    {
+      "id": "14",
+      "categoria": "Romance"
+    }
+  ],
+  "livros": [
+    {
+      "id": "1",
+      "livro": "Programação em java",
+      "autor": "Fulano",
+      "editora": "Nois tenta",
+      "tipo": "Fisico",
+      "categoria": "Programação"
+    },
+    {
+      "id": "2",
+      "livro": "Senhor dos Aneis",
+      "autor": "J. R. R. Tolkien",
+      "editora": "Europa America",
+      "tipo": "Fisico",
+      "categoria": "Literatura"
+    },
+    {
+      "id": "3",
+      "livro": "DBase lll Plus",
+      "autor": "LALALALA",
+      "editora": "So Deus Sabe",
+      "tipo": "Digital",
+      "categoria": "Banco de Dados"
+    },
+    {
+      "id": "4",
+      "livro": "Atlas Geografico",
+      "autor": "1956",
+      "editora": "Mundo",
+      "tipo": "Fisico",
+      "categoria": "Geografia"
+    },
+    {
+      "id": "5",
+      "livro": "JavaScript para iniciantes",
+      "autor": "Alguem Inteligente",
+      "editora": "Nois Tenta",
+      "tipo": "Digital",
+      "categoria": "Programação"
+    },
+    {
+      "id": "6",
+      "livro": "The Big Bang Theory",
+      "autor": "Chuck Lore",
+      "editora": "Wanner Bros",
+      "tipo": "Digital",
+      "categoria": "HQ"
+    },
+    {
+      "id": "7",
+      "livro": "Sherlock Holmes",
+      "autor": "Arthur Conan Doyle",
+      "editora": "Boa Pergunta",
+      "tipo": "Fisico",
+      "categoria": "Literatura"
+    },
+    {
+      "id": "8",
+      "livro": "Star Trek",
+      "autor": "Gene Roddenberry",
+      "editora": "1960 Original",
+      "tipo": "Digital",
+      "categoria": "Ficção Cientifica"
+    },
+    {
+      "id": "9",
+      "livro": "Star Wars",
+      "autor": "George Lucas",
+      "editora": "Esquecendo Jar Jar Binks",
+      "tipo": "Digital",
+      "categoria": "Ficção Cientifica"
+    },
+    {
+      "id": "10",
+      "livro": "Akira",
+      "autor": "Katsuhiro Otomo",
+      "editora": "Vicio",
+      "tipo": "Digital",
+      "categoria": "Mangá"
+    },
+    {
+      "id": "11",
+      "livro": "X-Men #4 - SW",
+      "autor": "Stan Lee",
+      "editora": "Marvel Comics",
+      "tipo": "Fisico",
+      "categoria": "HQ"
+    },
+    {
+      "id": "166",
+      "livro": "lalala",
+      "autor": "lalala",
+      "editora": "lalala",
+      "tipo": "lalala",
+      "formato": "lalala",
+      "categoria": "lalala"
+    },
+    {
+      "id": "537",
+      "livro": "Tesste Teste",
+      "autor": "Tesste Teste",
+      "editora": "Tesste Teste",
+      "tipo": "Fisico",
+      "categoria": "Programação"
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "username": "Sheldon Cooper",
+      "email": "sheldor@gmail.com",
+      "password": "cooper",
+      "permission": "Administrador"
+    },
+    {
+      "id": 2,
+      "username": "Scarlet Witch",
+      "email": "sw@gmail.com",
+      "password": "witch",
+      "permission": "Consulta"
+    },
+    {
+      "id": 3,
+      "username": "James Logan",
+      "email": "wolverine@gmail.com",
+      "password": "logan",
+      "permission": "Consulta"
+    },
+    {
+      "id": 4,
+      "username": "Fabiula Pellicciotti",
+      "email": "stormfire@gmail.com",
+      "password": "123456",
+      "permission": "Administrador"
+    }
+  ]
+}

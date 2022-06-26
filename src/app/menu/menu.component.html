@@ -1,0 +1,53 @@
+
+
+<input type="hidden" name="logado" value= "{{ logado }}"/>
+
+<div class="side-nav fixed" style="z-index: 1001 !important">
+  <nav>
+    <div class="nav-wrapper dark">
+      <div class="container">
+        <a class="brand-logo" href="#">
+          <img class="my-logo" src="../../assets/logo.png" />
+        </a>
+        <div >
+              <ng-template [ngIf]="logado"> <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+              </a>
+              <ul class="right hide-on-med-and-down">
+                <li><a routerLink="/home" class="flow-text"><span class="material-icons">home</span> </a></li>
+                <li><a routerLink="/livro" class="flow-text"><span class="material-icons">book</span></a></li>
+                <li><a routerLink="/search" class="flow-text"><span class="material-icons">search</span></a></li>
+                <li><a routerLink="/categoria" class="flow-text"><span class="material-icons">category</span></a></li>
+                <li><a routerLink="/user" class="flow-text"><span class="material-icons">manage_accounts</span></a></li>
+                <li><a (click)="loggof()" class="flow-text"><span class="material-icons">logout</span></a></li>
+
+              </ul>
+              <ul class="sidenav dark gray darkness-2 accent-4" id="mobile-demo" #mobile>
+                <div class="row">
+                  <div class="col s8">
+                    <div class="center">
+                      <h1>SGB</h1>
+                    </div>
+                  </div>
+                </div>
+                      <li><a routerLink="/home" class="flow-text"><i class="material-icons">home</i> Home</a></li>
+                      <li><a routerLink="/livro" class="flow-text"><i class="material-icons">book</i> Livro</a></li>
+                      <li><a routerLink="/search" class="flow-text"><i class="material-icons">search</i> Pesquisa</a></li>
+                      <li><a routerLink="/categoria" class="flow-text"><i class="material-icons">category</i>Categoria</a></li>
+                      <li><a routerLink="/user" class="flow-text"><i class="material-icons">manage_accounts</i>Usuário</a></li>
+                      <li><a routerLink="" (click)="loggof()" class="flow-text"><i class="material-icons">logout</i>Sair</a></li>
+
+              </ul>
+            </ng-template>
+
+        </div>
+      </div>
+    </div>
+
+
+  </nav>
+
+</div>
+
+
+

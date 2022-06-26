@@ -1,0 +1,11 @@
+.table-container {
+  height: 370px;
+  max-width: 100%;
+  overflow: auto;
+
+}
+
+.tdTable {
+  text-align: center;
+  vertical-align: middle;
+}

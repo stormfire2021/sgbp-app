@@ -1,0 +1,108 @@
+<div class="card-panel brown darken-1 center card-title white-text size-font: 20px">Mais Acessados do Mês </div>
+<div class="parallax">
+  <div class="row container"> <!--inicio row-->
+    <!--inicio col-->
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <a href="">
+            <img width="305" height="172"
+              class="responsive-img wp-post-image" alt="Angular for Dummy" loading="lazy"
+              title="Angular for Dummy"
+              srcset="../../assets/livros/im1.jpg 305w"
+              sizes="(max-width: 305px) 100vw, 305px"> </a>
+        </div>
+        <div class="card-content">
+          <p class="area"><a href="">Programação</a></p>
+          <a href=""><span
+              class="card-title activator brown-text text-darken-4">Angular for <br> Dummies</span></a>
+        </div>
+      </div>
+    </div>
+    <!--fim col-->
+   <!--inicio col-->
+   <div class="col s12 m4">
+    <div class="card">
+      <div class="card-image waves-effect waves-block waves-light">
+        <a href="">
+          <img width="305" height="172"
+            class="responsive-img wp-post-image" alt="Angular 2 Components" loading="lazy"
+            title="Angular 2 Components"
+            srcset="../../assets/livros/im2.jpg 305w"
+            sizes="(max-width: 305px) 100vw, 305px"> </a>
+      </div>
+      <div class="card-content">
+        <p class="area"><a href="">Programação</a></p>
+        <a href="">
+          <span class="card-title activator brown-text text-darken-4">Angular2 Components</span></a>
+      </div>
+    </div>
+  </div>
+  <!--fim col-->
+<!--inicio col-->
+<div class="col s12 m4">
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <a href="">
+        <img width="305" height="172"
+          class="responsive-img wp-post-image" alt="Bow Truss Coffee Roasters" loading="lazy"
+          title="Bow Truss Coffee Roasters"
+          srcset="../../assets/livros/im3.jpg 305w"
+          sizes="(max-width: 305px) 100vw, 305px"> </a>
+    </div>
+    <div class="card-content">
+      <p class="area"><a href="">Programação</a></p>
+      <a href="">
+        <span class="card-title activator brown-text text-darken-4">Cangaceiro JavaScript</span></a>
+    </div>
+  </div>
+</div>
+<!--fim col-->
+
+  </div>
+  <!--fim row-->
+
+
+
+
+<div class="card-panel brown darken-1 center card-title white-text size-font: 20px">Lista Livros </div>
+
+<div>
+  <table  class="striped">
+    <tr class=" brown darken-1 white-text   ">
+      <th scope = "col" width="5%" class="tdTable" >ID.       </th>
+      <th scope = "col" width="30%" class="tdTable" >Livro      </th>
+      <th scope = "col" width="20%" class="tdTable" >Autor      </th>
+      <th scope = "col" width="20%"class="tdTable" >Editora    </th>
+      <th scope = "col" width="10%" class="tdTable" >Tipo       </th>
+      <th scope = "col"  width="15%" class="tdTable" >Categoria  </th>
+      <th width="1.5%"></th>
+    </tr>
+  </table>
+</div>
+
+<div class="example-container">
+  <table  class="striped">
+      <tbody >
+        <tr *ngFor = 'let liv of livros'>
+              <td width="5%" class="tdTable">{{liv.id}}</td>
+              <td width="30%">{{liv.livro}}</td>
+              <td width="20%">{{liv.autor}}</td>
+              <td width="20%">{{liv.editora}}</td>
+              <td  width="10%" class="tdTable">{{liv.tipo}}</td>
+              <td width="15%" class="tdTable">{{liv.categoria}}</td>
+       </tr>
+      </tbody>
+</table>
+<div *ngIf="!livros || livros!.length == 0">
+  <div class="row">
+    <div class="center-align">
+      <i class="col s12 material-icons large red-text">sentiment_dissatisfied</i>
+      <span class="col s12 flow-text red-text"
+        >Sem livros cadastrados!</span
+      >
+    </div>
+  </div>
+</div>
+</div>
+
